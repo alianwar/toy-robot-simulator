@@ -3,6 +3,8 @@
 class RobotsController < ApplicationController
   before_action :set_robot, only: %i[show edit update destroy move left right report]
 
+  include CommandsConcern
+
   def index
     @robots = Robot.all
   end
@@ -38,20 +40,6 @@ class RobotsController < ApplicationController
 
     redirect_to robots_path
   end
-
-  def move
-    @robot.move!
-  end
-
-  def left
-    @robot.left!
-  end
-
-  def right
-    @robot.right!
-  end
-
-  def report; end
 
   private
 
