@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class RobotsController < ApplicationController
-  before_action :set_robot, only: %i[show edit update destroy]
+  before_action :set_robot, only: %i[show edit update destroy move left right report]
 
   def index
     @robots = Robot.all
@@ -25,7 +25,9 @@ class RobotsController < ApplicationController
 
   def edit; end
 
-  def update; end
+  def update
+    @robot.assign_attributes(robot_params)
+  end
 
   def destroy
     if @robot.destroy
@@ -36,6 +38,20 @@ class RobotsController < ApplicationController
 
     redirect_to robots_path
   end
+
+  def move
+    @robot.move!
+  end
+
+  def left
+    @robot.left!
+  end
+
+  def right
+    @robot.right!
+  end
+
+  def report; end
 
   private
 

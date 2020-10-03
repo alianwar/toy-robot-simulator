@@ -1,0 +1,6 @@
+<% if @robot.valid? %>
+  var text = '<%= @robot.report %>'
+  Swal.fire({ icon: 'success', title: 'Moved', text: text })
+<% else %>
+  Swal.fire({ icon: 'error', text: 'Invalid Move' })
+<% end %>

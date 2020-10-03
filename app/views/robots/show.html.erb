@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-md-6 text-left">
+    <h3>Play with Robot</h3>
+  </div>
+
+  <div class="col-md-6 text-right">
+    <%= link_to 'Back', robots_path, class: 'btn btn-light btn-outline-dark' %>
+  </div>
+</div>
+
+<hr>
+
+<div class="row d-flex justify-content-center">
+  <div class="col-md-5">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="card-title">Commands</h5>
+          </div>
+
+          <div class="col-md-6 text-right">
+            <%= link_to 'Report', report_robot_path(@robot), class: 'badge badge-pill badge-info p-2 mr-3', remote: true %>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-md-3"><%= link_to 'Move', move_robot_path(@robot), class: 'btn btn-primary', remote: true %></div>
+          <div class="col-md-3"><%= link_to 'Right', right_robot_path(@robot), class: 'btn btn-primary', remote: true %></div>
+          <div class="col-md-3"><%= link_to 'Left', left_robot_path(@robot), class: 'btn btn-primary', remote: true %></div>
+          <div class="col-md-3"><%= link_to 'Place', edit_robot_path(@robot), class: 'btn btn-primary', remote: true %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="robot-modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Place Robot</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="robot-modal-body"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

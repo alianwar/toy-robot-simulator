@@ -40,6 +40,10 @@ class Robot < ApplicationRecord
     update(position_x: position_x, position_y: position_y, facing: facing)
   end
 
+  def report
+    "Robot is currently placed at: (#{position_x}, #{position_y}) facing #{facing.titleize}"
+  end
+
   private
 
   def move_to
@@ -47,7 +51,7 @@ class Robot < ApplicationRecord
       north: { position_y: position_y + 1 },
       east: { position_x: position_x + 1 },
       south: { position_y: position_y - 1 },
-      west: { position_y: position_y - 1 }
+      west: { position_x: position_x - 1 }
     }
   end
 

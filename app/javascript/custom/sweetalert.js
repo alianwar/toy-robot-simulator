@@ -1,4 +1,5 @@
 import Swal from 'sweetalert2'
+window.Swal = Swal
 
 $(document).on('turbolinks:load ready', function() {
   $('body').on('click', 'a.swal', function() {

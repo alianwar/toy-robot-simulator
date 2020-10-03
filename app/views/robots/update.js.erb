@@ -1,0 +1,6 @@
+<% if @robot.save %>
+  $('#robot-modal').modal('hide');
+  Swal.fire({ icon: 'success', text: 'Robot Successfully Placed.' })
+<% else %>
+  $('#robot-modal-body').html("<%= j render 'form', robot: @robot %>")
+<% end %>

@@ -1,4 +1,4 @@
-<%= form_with model: robot, local: true, class: 'parsley-form' do |f| %>
+<%= form_with model: robot, local: robot.new_record?, class: 'parsley-form' do |f| %>
   <%= render 'shared/errors', object: robot %>
 
   <div class="form-group">
@@ -17,6 +17,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit class: 'btn btn-primary mt-2' %>
+    <%= f.submit 'Place', class: 'btn btn-primary mt-2' %>
   </div>
 <% end %>
