@@ -13,7 +13,7 @@
 
   <div class="form-group">
     <%= f.label :facing %>
-    <%= f.select :facing, options_for_select(facing_options, f.object.facing), { prompt: '-- Select --' }, { class: 'form-control' } %>
+    <%= f.select :facing, options_for_select(facing_options, f.object.facing), { prompt: '-- Select --' }, { class: 'form-control', required: true } %>
   </div>
 
   <div class="actions">

@@ -34,7 +34,7 @@
             <i class='fa fa-eye' aria-hidden='true'></i>
           <% end %>
 
-          <%= link_to robot, class: 'text-decoration-none text-danger', method: :delete, data: { toggle: 'tooltip', confirm: 'Are you sure you wish to delete this Robot?' }, title: 'Delete Robot' do %>
+          <%= link_to robot, class: 'text-decoration-none text-danger swal', method: :delete, data: { toggle: 'tooltip', swal_msg: 'Are you sure you wish to delete this Robot?' }, title: 'Delete Robot' do %>
             <i class='fa fa-trash' aria-hidden='true'></i>
           <% end %>
         </td>

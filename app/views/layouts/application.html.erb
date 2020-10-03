@@ -12,6 +12,7 @@
 
   <body>
     <div class="container mt-4">
+      <%= link_to '', '', class: 'd-none', id: 'swal-link', method: :delete %>
       <%= render 'shared/flash_messages' %>
       <%= yield %>
     </div>
