@@ -1,24 +1,20 @@
-# README
+# Toy Robot Simulator
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Setup Dependecies
 
-Things you may want to cover:
+* ruby 2.7.1
+* rails 6.0.3.3
+* postgresql
 
-* Ruby version
+### Run Setup
 
-* System dependencies
+* bundle install
+* rails db:create
+* rails db:migrate
 
-* Configuration
+### Run Project
 
-* Database creation
+* rails s (In one tab.)
+* bin/webpack-dev-server (In separate tab)
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Forman could be used as well.
