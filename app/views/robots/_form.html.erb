@@ -1,0 +1,22 @@
+<%= form_with model: robot, local: true, class: 'parsley-form' do |f| %>
+  <%= render 'shared/errors', object: robot %>
+
+  <div class="form-group">
+    <%= f.label 'X-Axix Position' %>
+    <%= f.select :position_x, (0..4), { prompt: '-- Select --' }, { class: 'form-control', required: true } %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label 'Y-Axix Position' %>
+    <%= f.select :position_y, (0..4), { prompt: '-- Select --' }, { class: 'form-control', required: true } %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :facing %>
+    <%= f.select :facing, options_for_select(facing_options, f.object.facing), { prompt: '-- Select --' }, { class: 'form-control' } %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit class: 'btn btn-primary mt-2' %>
+  </div>
+<% end %>

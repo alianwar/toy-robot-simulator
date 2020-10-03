@@ -11,6 +11,9 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container mt-4">
+      <%= render 'shared/flash_messages' %>
+      <%= yield %>
+    </div>
   </body>
 </html>

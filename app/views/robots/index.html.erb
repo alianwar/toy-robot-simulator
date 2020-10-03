@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-md-6 text-left">
+    <h1>Robots</h1>
+  </div>
+
+  <div class="col-md-6 text-right">
+    <%= link_to new_robot_path, class: 'btn btn-primary float-right' do %>
+      <i class="fa fa-plus mr-1" aria-hidden="true"></i>
+      <span>Add Robot</span>
+    <% end %>
+  </div>
+</div>
+
+<hr>
+
+<table class="table">
+  <thead class="table-head">
+    <tr class="bg-primary">
+      <th>Position(X-Axis)</th>
+      <th>Position(Y-Axis)</th>
+      <th>Facing</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @robots.each do |robot| %>
+      <tr>
+        <td><%= robot.position_x %></td>
+        <td><%= robot.position_y %></td>
+        <td><%= robot.facing.titleize %></td>
+        <td>
+          <%= link_to robot, class: 'text-decoration-none mr-2', data: { toggle: 'tooltip' }, title: 'Play' do %>
+            <i class='fa fa-eye' aria-hidden='true'></i>
+          <% end %>
+
+          <%= link_to robot, class: 'text-decoration-none text-danger', method: :delete, data: { toggle: 'tooltip', confirm: 'Are you sure you wish to delete this Robot?' }, title: 'Delete Robot' do %>
+            <i class='fa fa-trash' aria-hidden='true'></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -13,7 +13,7 @@ class Robot < ApplicationRecord
     left: -1
   }
 
-  enum facing: FACINGS
+  enum facings: FACINGS
 
   validates :position_x, :position_y, :facing, presence: true
   validates :position_x,
